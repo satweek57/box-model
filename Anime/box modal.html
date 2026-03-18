@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Box Model</title>
+
+    <style>
+        /* Page Styling */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #1d2b64, #f8cdda);
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        /* Heading Styling */
+        h3 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 4px #000;
+        }
+
+        /* Box Model Styling */
+        .box {
+            width: 420px;
+            box-sizing: border-box;
+            background-color: #e0f7fa; /* New soft cyan color */
+
+            padding: 25px;
+            border: 6px solid #00acc1; /* New border color */
+            border-radius: 25px;
+            outline: 4px solid #006064;
+            outline-offset: 12px;
+
+            color: #004d40;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.7;
+
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .box:hover {
+            background-color: #b2ebf2;
+            box-shadow: 0 0 25px #000;
+            transform: scale(1.05);
+            font-family: "Trebuchet MS", sans-serif;
+        }
+
+        /* Paragraph Styling */
+        .box p {
+            margin: 10px 0;
+        }
+
+        .box b {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>CSS BOX MODEL</h3>
+
+    <div class="box">
+        <p><b>Content Area</b> – Where text and content appear.</p>
+        <p><b>Padding</b> – Space between content and border.</p>
+        <p><b>Border</b> – Surrounds padding and content.</p>
+        <p><b>Margin</b> – Space outside the border.</p>
+        <p><b>Outline</b> – Drawn outside border.</p>
+        <p><b>box-sizing: border-box</b> – Keeps total size fixed.</p>
+    </div>
+
+</body>
+</html>
