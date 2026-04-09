@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<style>
+
+/* Page Background */
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+}
+
+
+/* Heading */
+h1 {
+    color: #333;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Focus Effect */
+input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 5px #667eea;
+}
+
+/* Error Text */
+span {
+    color: red;
+    font-size: 12px;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background: #5a67d8;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<h1>REGISTRATION FORM</h1>
+
+NAME:<br>
+<input type="text" id="NAME" oninput="NAME()">
+<span id="NAMEE"></span><br>
+
+GMAIL ID:<br>
+<input type="email" id="email" oninput="mail()">
+<span id="emaill"></span><br>
+
+MOBILE NUMBER:<br>
+<input type="tel" id="NUMBER" oninput="NUM()">
+<span id="NU"></span><br>
+
+PASSWORD:<br>
+<input type="password" id="PA" oninput="PAS()">
+<span id="P"></span><br>
+
+CONFIRM PASSWORD:<br>
+<input type="password" id="CONFIRM" oninput="CON()">
+<span id="CO"></span><br><br>
+
+<input type="submit" value="REGISTER">
+
+
+
+<script type="text/javascript">
+
+function NAME() {
+    let name = document.getElementById("NAME").value;
+    let pattern = /^[A-Z][A-Za-z]+$/;
+
+    if (name == "")
+        document.getElementById("NAMEE").innerHTML = "Name is mandatory";
+    else if (!pattern.test(name))
+        document.getElementById("NAMEE").innerHTML = "Invalid pattern";
+    else
+        document.getElementById("NAMEE").innerHTML = "";
+}
+
+function mail() {
+    let me = document.getElementById("email").value;
+    let pattern = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
+
+    if (me == "")
+        document.getElementById("emaill").innerHTML = "Required";
+    else if (!pattern.test(me))
+        document.getElementById("emaill").innerHTML = "Invalid email";
+    else
+        document.getElementById("emaill").innerHTML = "";
+}
+
+function NUM() {
+    let num = document.getElementById("NUMBER").value;
+    let pattern = /^[6-9][0-9]{9}$/;
+
+    if (num == "")
+        document.getElementById("NU").innerHTML = "Required";
+    else if (!pattern.test(num))
+        document.getElementById("NU").innerHTML = "Invalid number";
+    else
+        document.getElementById("NU").innerHTML = "";
+}
+
+function PAS() {
+    let num = document.getElementById("PA").value;
+    let pattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$/;
+
+    if (num == "")
+        document.getElementById("P").innerHTML = "Required";
+    else if (!pattern.test(num))
+        document.getElementById("P").innerHTML = "Weak password";
+    else
+        document.getElementById("P").innerHTML = "";
+}
+
+function CON() {
+    let num = document.getElementById("PA").value;
+    let n = document.getElementById("CONFIRM").value;
+
+    if (n !== num)
+        document.getElementById("CO").innerHTML = "Passwords do not match";
+    else
+        document.getElementById("CO").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>
